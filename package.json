@@ -12,21 +12,37 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/node": "^18.11.9",
+    "axios": "^0.21.1",
+    "body-parser": "^1.20.1",
+    "browserify-zlib": "^0.2.0",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "express": "^4.16.0",
+    "got": "^7.1.0",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "mongodb": "^4.11.0",
+    "mongoimport": "^1.0.6",
+    "mongoose": "^6.7.1",
+    "multer": "^1.4.5-lts.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2",
-    "react-scripts": "5.0.1",
-    "react-test-renderer": "^18.2.0",
     "react-hook-form": "^6.11.5",
     "react-router": "^5.2.0",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
     "react-stripe-elements": "^6.1.2",
+    "react-test-renderer": "^18.2.0",
+    "request": "^2.81.0",
     "semantic-ui-react": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "devStart": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,6 +51,7 @@
     ]
   },
   "browserslist": {
+    
     "production": [
       ">0.2%",
       "not dead",
@@ -45,5 +62,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
   }
 }
