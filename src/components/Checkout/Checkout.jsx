@@ -8,10 +8,9 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     const classes = useStyles();
 
 const Form = () => (activeStep === 0
-    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test}/>;
-   
-
-    return (
+    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} />
+    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} />);
+   return (
         <>
           <CssBaseline />
           <div className={classes.toolbar} />
@@ -31,3 +30,5 @@ const Form = () => (activeStep === 0
         </>
       );
     };
+
+     export default Checkout;
