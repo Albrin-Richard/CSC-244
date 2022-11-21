@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 
 const rentalCarSchema = new mongoose.Schema({
-    
- 
+
     fuelType: String,
     location: {
       city: String,
@@ -11,10 +10,6 @@ const rentalCarSchema = new mongoose.Schema({
       longitude: String,
       state: String
     }
-    
-  
-    
-    
   
 })
 

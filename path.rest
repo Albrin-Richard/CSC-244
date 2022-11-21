@@ -1,1 +1,19 @@
 GET http://localhost:3000/rentalCars/
+
+###
+
+POST http://localhost:3000/cart
+Content-Type: application/json
+
+{
+    "productId": 2160, 
+    "quantity": 1, 
+    "name" : "Hyundai", 
+    "description" : "Sonata", 
+    "price" : "39", 
+    "image": "https://s7d1.scene7.com/is/image/hyundai/2022-sonata-1?wid=1200&hei=630&qlt=85,0&fmt=webp"
+}
+
+###
+
+DELETE  http://localhost:3000/cart

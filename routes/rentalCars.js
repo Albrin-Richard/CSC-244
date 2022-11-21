@@ -18,17 +18,15 @@ router.get('/', async (req, res) => {
     const rentalCar = await RentalCar.find({"location.state": 'CA'}).limit(16);
     
     const jsonObj = JSON.parse(JSON.stringify(rentalCar));
-    console.log(jsonObj);
+    //console.log(jsonObj);
     
-    
-
    // Store the results in an array
    var array = [];
      const results = jsonObj;
      //console.log(results);
      // Print the results
      if (results.length > 0) {
-         console.log(`Found listing(s) with at Ratings:`);
+         //console.log(`Found listing(s) with at Ratings:`);
          results.forEach((result, i) => {
           //handle images with 8 images  
           j=i;
@@ -40,7 +38,8 @@ router.get('/', async (req, res) => {
          res.send(array);
      } else {
         
-         console.log(`No listing(s) `);
+        console.log(`No listing(s) `);
+        res.send("No Data present");
      }
   } catch (err) {
     res.status(500).json({ message: err.message })

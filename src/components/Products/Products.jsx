@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import axios from 'axios';
+
 
 import Product from './Product/Product';
 import useStyles from './styles';
@@ -25,40 +25,21 @@ import useStyles from './styles';
 
 
 
-const Products = () => {
+const Products = ({products, onAddToCart}) => {
   const classes = useStyles();
 
-  const [notes, getNotes] = useState('');
- 
-
-  //get data from api
-  const url = "http://localhost:3000/rentalCars";
   
-  useEffect(() => {
-    getAllNotes();
-  }, []);
-
-  const getAllNotes = () => {
-    axios.get(url)
-    .then((response) => {
-      const allNotes = response.data;
-      getNotes(allNotes);
-      //console.log(notes);
-    })
-    .catch(error => console.error(`Error: ${error}`));
-
-  }
 
 
-  if (!notes.length) return <p>Loading...</p>;
-console.log(notes);
+  if (!products.length) return <p>Loading...</p>;
+//console.log(products);
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
       <Grid container justifyContent="center" spacing={4}>
-        {notes.map((product) => (
+        {products.map((product) => (
           <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
-            <Product product={product}  />
+            <Product product={product} onAddToCart={onAddToCart} />
           </Grid>
         ))}
       </Grid>
