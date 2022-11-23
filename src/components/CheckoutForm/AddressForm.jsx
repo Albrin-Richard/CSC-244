@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import countryList from 'react-select-country-list'
 import SelectUSState from 'react-select-us-states';
 
-import { commerce } from '../../lib/commerce';
+
 import FormInput from './CustomTextField';
 
 const AddressForm = ({test }) => {
@@ -34,7 +34,7 @@ const AddressForm = ({test }) => {
 
   return (
     <>
-      <Typography variant="h6" gutterBottom>Shipping address</Typography>
+      <Typography variant="h6" gutterBottom>Billing address</Typography>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit((data) => test({ ...data}))} >
           <Grid container spacing={3}>

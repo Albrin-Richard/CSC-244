@@ -1,6 +1,9 @@
 GET http://localhost:3000/rentalCars/
 
 ###
+GET http://localhost:3000/cart/
+
+###
 
 POST http://localhost:3000/cart
 Content-Type: application/json

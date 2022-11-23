@@ -16,16 +16,12 @@ router.get('/', async (req, res) => {
         console.log(`No listing(s) `);
         //console.log(jsonObj.length);  
         res.send([{products:[]}]);
-
       }
-
       else {
         
-        console.log(jsonObj[0].products.length);
-      //const jsonObj = JSON.parse(JSON.stringify(rentalCar));
-      console.log(jsonObj);
-      
-      res.send(jsonObj);
+        console.log(jsonObj);
+
+        res.send(jsonObj);
      }
      
     } catch (err) {
@@ -37,19 +33,22 @@ router.get('/', async (req, res) => {
 // Deleting One
 router.delete('/:id', getCar, async (req, res) => {
   
-  const userId = "5de7ffa74fff640a0491bc4f"; //TODO: the logged in user id
+  const userId = "5de7ffa74fff640a0491bc4f"; 
   
     try {
       let cart = await Cart.findOne({ userId });
       console.log(cart.products[res.itemIndex].price);
       if (cart) {
       
-      
+      //Update Cart Total
       cart.total = cart.total - parseInt(cart.products[res.itemIndex].price);
       console.log(cart.total);
       console.log("------------------");
-
+      
+      //Delete the item from cart
       cart.products.splice(res.itemIndex, 1);
+      
+      //Save the cart
       cart = await cart.save();
       res.status(200).send(cart);
       }
