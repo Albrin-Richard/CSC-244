@@ -19,4 +19,4 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3000/cart
+DELETE  http://localhost:3000/cart/2160
