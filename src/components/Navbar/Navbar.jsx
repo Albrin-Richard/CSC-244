@@ -19,8 +19,12 @@ const NavBar = ({ totalItems}) => {
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Car Rental Booking System
           </Typography>
           <div className={classes.grow} />
+          
           {location.pathname === '/' && (
           <div className={classes.button}>
+            <Typography  component={Link} to="/orders" variant="h6" className={classes.order} color="inherit">
+            Orders
+          </Typography>
             <IconButton  component={Link} to="/cart" aria-label="Show cart items" color="inherit">
               <Badge overlap="rectangular" badgeContent={totalItems} color="secondary">
                 <ShoppingCart />

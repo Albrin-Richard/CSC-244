@@ -20,3 +20,16 @@ Content-Type: application/json
 ###
 
 DELETE  http://localhost:3000/cart/2160
+
+###
+
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "userId": "5de7ffa74fff640a0491bc4f", 
+      "total": "40",
+      "address": {"city": "sac"},
+      "products": [{ "id": 15, "name": "car 1", "description": "Running car", "price": "5", "image": "https://ca-times.brightspotcdn.com/dims4/default/427f642/2147483647/strip/true/crop/2661x1317+0+0/resize/1200x594!/format/webp/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa3%2F01%2F196a389d4283b5b64d8493e0eb19%2Farteon-exterior-front-cropped.jpg"}
+    ]
+}

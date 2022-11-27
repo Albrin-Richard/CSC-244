@@ -21,5 +21,7 @@ app.use('/rentalCars', rentalCarsRouter)
 const shoppingCartRouter = require('./routes/shoppingCart')
 app.use('/cart', shoppingCartRouter)
 
+const ordersRouter = require('./routes/orders')
+app.use('/orders', ordersRouter)
 
 app.listen(3000, () => console.log('Server Started'))

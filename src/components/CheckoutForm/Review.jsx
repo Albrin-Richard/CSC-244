@@ -6,7 +6,7 @@ const Review = ({ checkoutToken }) => (
     <Typography variant="h6" gutterBottom>Order summary</Typography>
     <List disablePadding>
       {checkoutToken.products.map((product) => (
-        <ListItem style={{ padding: '10px 0' }} key={product.name}>
+        <ListItem style={{ padding: '10px 0' }} key={product.productId}>
           <ListItemText primary={product.name +" "+ product.description} secondary={`Quantity: ${product.quantity}`} />
           <Typography variant="body2">${product.price}.00 /day</Typography>
         </ListItem>

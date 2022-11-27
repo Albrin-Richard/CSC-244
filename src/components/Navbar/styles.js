@@ -17,6 +17,12 @@ export default makeStyles((theme) => ({
     display: 'flex',
     textDecoration: 'none',
   },
+  order: {
+    marginRight: theme.spacing(2),
+    flexGrow: 1,
+    alignItems: 'center',
+    textDecoration: 'none',
+  },
   image: {
     marginRight: '10px',
   },

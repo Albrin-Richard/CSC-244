@@ -10,7 +10,7 @@ import useStyles from './styles';
 
 const steps = ['Billing address', 'Payment details'];
 
-const Checkout = ({ cart, onCaptureCheckout}) => {
+const Checkout = ({ cart, onCaptureCheckout, orderId}) => {
   
 const [shippingData, setShippingData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
@@ -27,7 +27,7 @@ const [shippingData, setShippingData] = useState({});
       <div>
         <Typography variant="h5">Thank you for your purchase, {shippingData.firstName} {shippingData.lastName}!</Typography>
         <Divider className={classes.divider} />
-        <Typography variant="subtitle2">Order ref: {cart._id}</Typography>
+        <Typography variant="subtitle2">Order ref: {orderId}</Typography>
       </div>
       <br />
       <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>

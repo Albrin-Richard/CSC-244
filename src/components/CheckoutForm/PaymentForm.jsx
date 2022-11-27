@@ -7,7 +7,7 @@ import Review from './Review';
 
 
 
-const PaymentForm = ({ cart, nextStep, backStep,  onCaptureCheckout }) => {
+const PaymentForm = ({ cart, shippingData, nextStep, backStep,  onCaptureCheckout }) => {
 
     const {
         wrapperProps,
@@ -19,7 +19,7 @@ const PaymentForm = ({ cart, nextStep, backStep,  onCaptureCheckout }) => {
   
 const handleSubmit = async (e) => {
         e.preventDefault();
-        onCaptureCheckout(cart);
+        onCaptureCheckout(cart, shippingData);
         nextStep();
 }
   return (
